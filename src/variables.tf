@@ -10,12 +10,6 @@ variable "resource_group" {
   })
 }
 
-variable "container_name" {
-  type        = string
-  description = "Storage Container Name"
-  default     = "terraform"
-}
-
 variable "account_tier" {
   type        = string
   description = "Storage Account Tier"
@@ -28,10 +22,9 @@ variable "account_replication_type" {
   default     = "LRS"
 }
 
-variable "container_access_type" {
-  type        = string
-  description = "Container Access Type"
-  default     = "private"
+variable "allow_blob_public_access" {
+  type    = string
+  default = false
 }
 
 variable "tags" {

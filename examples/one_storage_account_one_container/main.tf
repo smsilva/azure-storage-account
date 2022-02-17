@@ -15,7 +15,15 @@ module "storage_account" {
   resource_group = azurerm_resource_group.default
 }
 
-output "storage_account_instance" {
-  value     = module.storage_account.instance
+module "storage_account_container" {
+  source = "../../src/container"
+
+  storage_account = module.storage_account.instance
+  name            = "terraform"
+  access_type     = "private"
+}
+
+output "storage_account_container_instance" {
+  value     = module.storage_account_container.instance
   sensitive = true
 }
