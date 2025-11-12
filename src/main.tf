@@ -10,6 +10,5 @@ resource "azurerm_storage_account" "default" {
   account_replication_type      = var.account_replication_type
   public_network_access_enabled = var.allow_blob_public_access
   min_tls_version               = "TLS1_2"
-  enable_https_traffic_only     = true
   tags                          = var.tags
 }

@@ -10,7 +10,7 @@ variable "access_type" {
 
 resource "azurerm_storage_container" "default" {
   name                  = var.name
-  storage_account_name  = var.storage_account.name
+  storage_account_id    = var.storage_account.id
   container_access_type = var.access_type
 }
 
